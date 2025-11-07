@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather demo</title>
+</head>
+<link rel="stylesheet" href="./css/all.min.css">
+<link rel="stylesheet" href="./css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/style.css">
+<body>
+<body cz-shortcut-listen="true">
+		
+		<div class="site-content">
+			<nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+				<div class="container">
+					<a class="navbar-brand d-flex align-items-center" href="/">
+						<img src="img/logo@2x.png" alt="" class="me-3" width="64" height="38">
+						<div>
+							<h1 class="mb-0 text-white" style="font-size: 1.1428571429em; font-weight: 700;">Weather</h1>
+							<small class="text-muted d-block" style="font-size: 0.7142857143em;">tagline goes here</small>
+						</div>
+					</a>
+
+					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+
+					<div class="collapse navbar-collapse" id="navbarNav">
+						<ul class="navbar-nav ms-auto">
+							<li class="nav-item"><a class="nav-link active text-white px-3" href="/">Home</a></li>
+							<li class="nav-item"><a class="nav-link text-white px-3" href="#">News</a></li>
+							<li class="nav-item"><a class="nav-link text-white px-3" href="#">Live cameras</a></li>
+							<li class="nav-item"><a class="nav-link text-white px-3" href="#">Photos</a></li>
+							<li class="nav-item"><a class="nav-link text-white px-3" href="/contact">Contact</a></li>
+						</ul>
+					</div>
+
+				</div>
+			</nav>
+
+			<div class="hero text-center py-5" data-bg-image="images/banner.png">
+				<div class="container w-100">
+					<form class="find-location position-relative mb-5">
+						<input type="text" placeholder="Find your location..." id="search" class="form-control rounded-pill ps-3 pe-5 py-3">
+						<input type="button" value="Find" id="submit" class="btn btn-primary rounded-pill position-absolute end-0 top-0 bottom-0 m-2">
+					</form>
+
+				</div>
+			</div>
+			<div class="forecast-table">
+				<div class="container mt-5 pt-5">
+					<div class="forecast-container row g-0" id="forecast">
+						<div class="today forecast col-lg-4 col-md-6 col-12 p-3 bg-dark border-end border-secondary">
+    							<div class="forecast-header" id="today">
+    								<div class="row align-items-center mb-2">
+    									<div class="col">Friday</div>
+    									<div class="col text-end">7 November</div>
+    								</div>
+    							</div>
+    							<div class="forecast-content text-start">
+    								<div class="location fs-5 fw-normal mb-3">Cairo</div>
+    								<div class="degree d-flex align-items-center gap-3 mb-3">
+        								<div class="num fs-1 fw-bold">27.1<sup>o</sup>C</div>
+      
+        								<div class="forecast-icon">
+            								<img src="img/113.png" alt="" width="90">
+        								</div>	
+    
+    								</div>
+    								<div class="custom text-info mb-3">Sunny</div>
+    								<div class="d-flex flex-column gap-2 small">
+    									<span><img src="img/icon-umberella@2x.png" alt="" width="21" height="21" class="me-2">20%</span>
+    									<span><img src="img/icon-wind@2x.png" alt="" width="23" height="21" class="me-2">18km/h</span>
+    									<span><img src="img/icon-compass@2x.png" alt="" width="21" height="21" class="me-2">East</span>
+    								</div>
+    							</div>
+						</div>
+						
+						<div class="forecast col-lg-4 col-md-6 col-12 p-3 bg-secondary text-center border-end border-secondary">
+        						<div class="forecast-header">
+            						<div class="day fw-bold">Saturday</div>
+        						</div>
+        						<div class="forecast-content">
+            						<div class="forecast-icon mb-2">
+                						<img src="img/113.png" alt="" width="48">
+            						</div>
+            						<div class="degree fs-5 fw-bold text-white">28.6<sup>o</sup>C</div>
+            						<small class="text-muted">20.1<sup>o</sup></small>
+            						<div class="custom text-info mt-2">Sunny</div>
+        						</div>
+        					</div>
+        					
+						<div class="forecast col-lg-4 col-md-6 col-12 p-3 bg-dark text-center">
+        						<div class="forecast-header">
+            						<div class="day fw-bold">Sunday</div>
+        						</div>
+        						<div class="forecast-content">
+            						<div class="forecast-icon mb-2">
+                						<img src="img/113.png" alt="" width="48">
+            						</div>
+            						<div class="degree fs-5 fw-bold text-white">29<sup>o</sup>C</div>
+            						<small class="text-muted">19.8<sup>o</sup></small>
+            						<div class="custom text-info mt-2">Sunny</div>
+        						</div>
+        					</div>
+					</div>
+				</div>
+			</div>
+	
+			
+
+			<footer class="site-footer bg-secondary text-light py-5">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-8 mb-4 mb-md-0">
+							<form action="#" class="subscribe-form position-relative">
+								<input type="text" placeholder="Enter your email to subscribe..." class="form-control rounded-pill ps-3 pe-5 py-2" style="background: #1e202b; color: white; border: none;">
+								<input type="submit" value="Subscribe" class="btn btn-primary rounded-pill position-absolute end-0 top-0 bottom-0 m-1" style="padding: 0 40px;">
+							</form>
+						</div>
+						<div class="col-md-4">
+							<div class="social-links d-flex gap-3">
+								<a href="#" class="social-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+								<a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+								<a href="#" class="social-link" title="Google+"><i class="fab fa-google-plus-g"></i></a>
+								<a href="#" class="social-link" title="Pinterest"><i class="fab fa-pinterest-p"></i></a>
+							</div>
+						</div>
+					</div>
+
+					<p class="colophon mt-4 mb-0 small text-muted">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+				</div>
+			</footer> 
+		</div>
+		
+    <script src="./js/all.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+</html>
