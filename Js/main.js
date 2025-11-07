@@ -78,9 +78,9 @@ function displayWeather(data) {
                 </div>
                 <div class="custom text-info mb-3">${todayCondition}</div>
                 <div class="d-flex flex-column gap-2 small">
-                    <span><img src="img/icon-umberella@2x.png" alt="" width="21" height="21" class="me-2">${Math.round(todayChanceRain)}%</span>
-                    <span><img src="img/icon-wind@2x.png" alt="" width="23" height="21" class="me-2">${todayWindKph.toFixed(1)}km/h</span>
-                    <span><img src="img/icon-compass@2x.png" alt="" width="21" height="21" class="me-2">${getWindDirection(current.wind_degree)}</span>
+                    <span><img src="./img/icon-umberella@2x.png" alt="Chance of rain" width="21" height="21" class="me-2">${Math.round(todayChanceRain)}%</span>
+                    <span><img src="./img/icon-wind@2x.png" alt="Wind speed" width="23" height="21" class="me-2">${todayWindKph.toFixed(1)}km/h</span>
+                    <span><img src="./img/icon-compass@2x.png" alt="Wind direction" width="21" height="21" class="me-2">${getWindDirection(current.wind_degree)}</span>
                 </div>
             </div>
         </div>
@@ -142,11 +142,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Load weather based on user location or default
     getUserLocation();
 
-    // Search functionality
+    // Search functionality - with null checks
     const searchInput = document.getElementById('search');
     const submitBtn = document.getElementById('submit');
 
-    // Real-time search on input (searched google )
+    if (!searchInput || !submitBtn) {
+        console.error('Search elements not found');
+        return;
+    }
+
+    // Real-time search on input
     let searchTimeout;
     searchInput.addEventListener('input', (e) => {
         clearTimeout(searchTimeout);
